@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* =========================================================
+   PALETA — Carbon + Lime (premium, sóbria, 1 acento)
+   --background : carbono base (fundo geral)
+   --surface    : superfície elevada (cards)
+   --foreground : off-white (texto)
+   --muted      : cinza neutro (texto secundário)
+   --accent     : LIME — usado com PARCIMÔNIA (marca, CTA, detalhes)
+   --accent-2   : lime mais fundo (para gradientes sutis, não arco-íris)
+   ========================================================= */
+:root {
+  --background: #131313;
+  --surface: #1b1b1b;
+  --foreground: #ededed;
+  --muted: #8c8c8c;
+  --accent: #c6ff34;
+  --accent-2: #a6e62a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Tipografia de DISPLAY — serifa editorial elegante (títulos).
+   Aplique `.font-display` em h1/h2 para a cara premium. */
+.font-display {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Wordmark da marca (logo no topo) */
+.font-brand {
+  font-family: var(--font-brand), var(--font-sans), sans-serif;
+}
+
+/* Superfície "vidro" — refinada: menos frost, borda discreta,
+   sombra sutil (não pesada). Premium = restrição. */
+.glass {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+/* Brilho radial decorativo de fundo (lime, bem sutil) */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  pointer-events: none;
+}

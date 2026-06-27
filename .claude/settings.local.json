@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell($csv = Import-Csv .claude/skills/ui-ux-pro-max/data/ux-guidelines.csv; $csv | Where-Object { $_.PSObject.Properties.Value -match 'animation|scroll|motion' } | Select-Object -First 6 | Format-List)"
+    ]
+  }
+}
